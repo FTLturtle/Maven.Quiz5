@@ -7,9 +7,6 @@ import java.util.*;
  */
 public class GenericUtils {
 
-    // The tests are not looking for powersets, but rather the list of all permutations
-
-    // fake power set
     public static <T extends Comparable<T>> List<List<T>> powerSet(T[] elements) {
         int length = elements.length;
         List<List<T>> blah = new ArrayList<>();
