@@ -6,6 +6,7 @@ import java.util.*;
  * @author leon on 11/12/2018.
  */
 public class StringEvaluator {
+    @SuppressWarnings("Duplicates")
     public static String[] getAllSubstrings(String string) {
         int strLen = string.length();
         String[] substrings = new String[(strLen * (strLen + 1)) / 2];
@@ -19,6 +20,7 @@ public class StringEvaluator {
         return Arrays.stream(substrings).distinct().toArray(String[]::new);
     }
 
+    @SuppressWarnings("Duplicates")
     public static String[] getCommonSubstrings(String string1, String string2) {
         Set<String> checkDuplicates = new HashSet<>(Arrays.asList(getAllSubstrings(string1)));
         List<String> commonSubstrings = new ArrayList<>(checkDuplicates.size());
