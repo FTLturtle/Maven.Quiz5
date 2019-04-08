@@ -1,6 +1,5 @@
 package rocks.zipcode.io.quiz4.generics;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -30,7 +29,7 @@ public class GenericUtils {
             }
         }
 
-        blah.sort(new ListComparator());
+        blah.sort(new ListComparator<>());
 
         return blah;
     }
