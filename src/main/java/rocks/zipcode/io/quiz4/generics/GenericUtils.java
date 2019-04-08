@@ -11,18 +11,18 @@ public class GenericUtils {
         int length = elements.length;
         List<List<T>> listOfLists = new ArrayList<>();
 
-        List<T> tempList = Arrays.asList(elements);
-        Collections.sort(tempList);
-        listOfLists.add(Arrays.asList(elements));
+        List<T> firstList = Arrays.asList(elements);
+        Collections.sort(firstList);
+        listOfLists.add(firstList);
 
         Set<Set<T>> powerSet = realPowerSet(Arrays.asList(elements));
 
-        List<T> list = new ArrayList<>();
+        List<T> tempList = new ArrayList<>();
         for (Set<T> set : powerSet) {
-            list.clear();
-            list.addAll(set);
-            if (list.size() < length) {
-                listOfLists.addAll(permutations(list));
+            tempList.clear();
+            tempList.addAll(set);
+            if (tempList.size() < length) {
+                listOfLists.addAll(permutations(tempList));
             }
         }
 
