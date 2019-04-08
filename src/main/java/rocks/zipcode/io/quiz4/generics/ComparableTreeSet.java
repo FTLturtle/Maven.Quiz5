@@ -2,7 +2,6 @@ package rocks.zipcode.io.quiz4.generics;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.TreeSet;
 
 /**
@@ -23,9 +22,7 @@ public class ComparableTreeSet<T extends Comparable<T>> extends TreeSet<T> imple
 
     @Override
     public int compareTo(ComparableTreeSet<T> o) {
-        List<T> list1 = new ArrayList<>(this);
-        List<T> list2 = new ArrayList<>(o);
         ListComparator<T> listComparator = new ListComparator<>();
-        return listComparator.compare(list1, list2);
+        return listComparator.compare(new ArrayList<>(this), new ArrayList<>(o));
     }
 }
