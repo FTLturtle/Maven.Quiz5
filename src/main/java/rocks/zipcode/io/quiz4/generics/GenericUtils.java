@@ -9,11 +9,11 @@ public class GenericUtils {
 
     public static <T extends Comparable<T>> List<List<T>> powerSet(T[] elements) {
         int length = elements.length;
-        List<List<T>> blah = new ArrayList<>();
+        List<List<T>> listOfLists = new ArrayList<>();
 
         List<T> tempList = Arrays.asList(elements);
         Collections.sort(tempList);
-        blah.add(Arrays.asList(elements));
+        listOfLists.add(Arrays.asList(elements));
 
         Set<Set<T>> powerSet = realPowerSet(Arrays.asList(elements));
 
@@ -22,13 +22,13 @@ public class GenericUtils {
             list.clear();
             list.addAll(set);
             if (list.size() < length) {
-                blah.addAll(permutations(list));
+                listOfLists.addAll(permutations(list));
             }
         }
 
-        blah.sort(new ListComparator<>());
+        listOfLists.sort(new ListComparator<>());
 
-        return blah;
+        return listOfLists;
     }
 
     public static <T extends Comparable<T>> List<List<T>> permutations(List<T> elements) {

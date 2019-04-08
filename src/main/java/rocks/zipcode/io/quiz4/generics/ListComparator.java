@@ -1,8 +1,9 @@
 package rocks.zipcode.io.quiz4.generics;
 
+import java.util.Comparator;
 import java.util.List;
 
-public class ListComparator<T extends Comparable<T>> implements java.util.Comparator<List<T>> {
+public class ListComparator<T extends Comparable<T>> implements Comparator<List<T>> {
     @Override
     public int compare(List<T> o1, List<T> o2) {
         if (o1.size() == 0 && o2.size() == 0) {
